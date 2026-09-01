@@ -1,1 +1,26 @@
-﻿<h1>Welcome to our diary entries index</h1>
+﻿@model List<DiaryEntry>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @* fix bug here *@
+            @foreach(var entry in Model)
+            {
+                <tr>
+                    <td>@entry.Title</td>
+                    <td>@entry.Content</td>
+                    <td>@entry.Created</td>
+                    <td>Edit and Delete</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
