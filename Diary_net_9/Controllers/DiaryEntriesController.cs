@@ -19,5 +19,10 @@ namespace Diary_net_9.Controllers
 
             return View(objDiaryEntryList);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
