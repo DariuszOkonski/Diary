@@ -24,5 +24,14 @@ namespace Diary_net_9.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(DiaryEntry obj)
+        {
+            _db.DiaryEntries.Add(obj);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index", "DiaryEntries");
+        }
     }
 }
