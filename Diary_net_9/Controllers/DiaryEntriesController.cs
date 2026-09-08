@@ -97,5 +97,14 @@ namespace Diary_net_9.Controllers
 
             return View(diaryEntry);
         }
+
+        [HttpPost]
+        public IActionResult Delete(DiaryEntry obj)
+        {
+            _db.DiaryEntries.Remove(obj);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
